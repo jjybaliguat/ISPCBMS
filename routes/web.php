@@ -62,6 +62,7 @@ Route::group(['namespace' => 'App\Http\Controllers'],function()
     // -------------------------- main dashboard ----------------------//
     Route::controller(HomeController::class)->group(function () {
         Route::get('/home', 'index')->middleware('auth')->name('home');
+        Route::get('/users-list', 'usersList')->middleware('auth')->name('users-list');
     });
 });
 
